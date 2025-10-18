@@ -8,7 +8,6 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      /* Black to Blue Gradient Background */
       background: linear-gradient(to bottom, #000000, #001f4d);
       min-height: 100vh;
       color: #fff;
@@ -30,7 +29,7 @@
       padding: 32px;
     }
     .item {
-      background: #ffffffff;
+      background: transparent;
       border-radius: 20px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.15);
       display: flex;
@@ -40,21 +39,21 @@
       transition: box-shadow 0.2s, transform 0.15s;
     }
     .item:hover {
-      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 24px rgba(255,255,255,0.2);
       transform: translateY(-2px) scale(1.03);
     }
     .item img {
       width: 110px;
       height: 110px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 12px;
-      background: #f1f1f1;
+      background: transparent;
       margin-bottom: 14px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     }
     .item span {
       font-size: 1.03rem;
-      color: #202020;
+      color: #ffffff;
       margin-top: 2px;
       text-align: center;
       word-break: break-word;
@@ -81,6 +80,7 @@
     <p>Click an icon to launch your favorite site</p>
   </div>
   <div class="grid">
+    <!-- Your launcher items below -->
     <a class="item" href="https://via80hd.github.io/RyanoPortal/landingpage.html" target="_blank">
       <img src="https://dalankz.wordpress.com/wp-content/uploads/2025/08/copilot_image_1751956952633.png?w=1024" alt="Ryano Portal">
       <span>Ryano Portal</span>
@@ -157,18 +157,4 @@
       <img src="https://dalankz.wordpress.com/wp-content/uploads/2025/09/1000011001.png?w=1000" alt="Yopmail">
       <span>Yopmail</span>
     </a>
-    <a class="item" href="https://z-library.sk/" target="_blank">
-      <img src="https://dalankz.wordpress.com/wp-content/uploads/2024/10/zlibrary-1.png" alt="ZLibrary">
-      <span>ZLibrary</span>
-    </a>
-    <a class="item" href="https://pinetools.com/" target="_blank">
-      <img src="https://dalankz.wordpress.com/wp-content/uploads/2024/12/pine-1.png?w=1000" alt="PineTools">
-      <span>PineTools</span>
-    </a>
-    <a class="item" href="https://streamable.com/" target="_blank">
-      <img src="https://dalankz.wordpress.com/wp-content/uploads/2024/12/streamable.png?w=1000" alt="Streamable">
-      <span>Streamable</span>
-    </a>
-  </div>
-</body>
-</html>
+    <a
