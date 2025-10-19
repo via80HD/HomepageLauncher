@@ -39,11 +39,13 @@
       const url = document.getElementById('url').value.trim();
       const img = document.getElementById('img').value.trim();
       const page = document.getElementById('page').value.trim();
-      const page = document.getElementById('page').value;
+     
 
       const snippet = `<!-- Add to ${page} -->\n<a href="${url}" target="_blank">\n  <img src="${img}" alt="QuikLink Icon" class="launcher-icon">\n</a>`;
       document.getElementById('output').textContent = snippet;
+      const page = document.getElementById('page').value;
     }
+  
   </script>
 </body>
 </html>
