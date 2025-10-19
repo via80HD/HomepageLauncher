@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuikLink</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #eee; padding: 2em; }
+    input, select, button, textarea {
+      display: block; margin: 1em 0; padding: 0.5em; width: 100%;
+      background: #222; color: #eee; border: 1px solid #444;
+    }
+    .output { background: #1a1a1a; padding: 1em; border: 1px solid #333; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>QuikLink — Drop. Generate. Deploy.</h1>
+
+  <label>🔗 Website URL</label>
+  <input type="text" id="url" placeholder="https://example.com">
+
+  <label>🖼️ Icon Image URL</label>
+  <input type="text" id="img" placeholder="https://example.com/icon.png">
+
+  <label>📄 Target Page Name</label>
+  <input type="text" id="page" placeholder="e.g., Home.html">
+
+  <button onclick="generateCode()">Generate Snippet</button>
+
+  <h2>🧬 Output</h2>
+  <div class="output" id="output"></div>
+
+  <script>
+    function generateCode() {
+      const url = document.getElementById('url').value.trim();
+      const img = document.getElementById('img').value.trim();
+      const page = document.getElementById('page').value.trim();
+
+      const snippet = `<!-- Add to ${page} -->\n<a href="${url}" target="_blank">\n  <img src="${img}" alt="QuikLink Icon" class="launcher-icon">\n</a>`;
+      document.getElementById('output').textContent = snippet;
+    }
+  </script>
+</body>
+</html>
