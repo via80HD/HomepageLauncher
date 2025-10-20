@@ -31,13 +31,6 @@
       border: 1px solid #333;
       white-space: pre-wrap;
     }
-    h1 {
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
-    }
-    label {
-      font-weight: bold;
-    }
     #reminder {
       color: #aaa;
       font-style: italic;
@@ -46,7 +39,7 @@
   </style>
 </head>
 <body>
-  <h1>QuikLink — Drop. Generate. Deploy.</h1>
+  <h1>QuikLink — Mobile Debug Test</h1>
 
   <label>🔗 Website URL</label>
   <input type="text" id="url" placeholder="https://example.com">
@@ -59,24 +52,45 @@
     <option value="index.html">Home</option>
     <option value="tools.html">Tools</option>
     <option value="projects.html">Projects</option>
+    <option value="quiklink.html">QuikLink</option>
   </select>
 
   <button onclick="generateCode()">Generate Snippet</button>
 
   <h2>🧬 Output</h2>
-  <div class="output" id="output"></div>
+  <div class="output" id="output">[Waiting for snippet]</div>
   <button onclick="copyToClipboard()">Copy Snippet</button>
-  <p id="reminder"></p>
+  <p id="reminder">[Reminder will appear here]</p>
 
   <script>
     function generateCode() {
+      alert("✅ Button is working — generating snippet now.");
+
       const url = document.getElementById('url').value.trim();
       const img = document.getElementById('img').value.trim();
       const page = document.getElementById('page').value;
 
+      if (!url || !img || !page) {
+        alert("⚠️ Please fill out all fields before generating.");
+        return;
+      }
+
       const snippet = `<!-- Add to ${page} -->\n<a href="${url}" target="_blank">\n  <img src="${img}" alt="QuikLink Icon" class="launcher-icon">\n</a>`;
       document.getElementById('output').textContent = snippet;
-
-      alert(`✅ Snippet generated!\nPaste this code into ${page} where you want the icon to appear.`);
       document.getElementById('reminder').textContent =
-        `✅ Paste this snippet into
+        `✅ Paste this snippet into ${page} where you want the icon to appear.`;
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById('output').textContent;
+      if (!output || output.includes("[Waiting")) {
+        alert("⚠️ Nothing to copy. Generate a snippet first.");
+        return;
+      }
+      navigator.clipboard.writeText(output).then(() => {
+        alert("📋 Snippet copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
