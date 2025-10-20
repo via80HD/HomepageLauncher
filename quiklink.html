@@ -3,12 +3,46 @@
 <head>
   <title>QuikLink</title>
   <style>
-    body { font-family: sans-serif; background: #111; color: #eee; padding: 2em; }
-    input, select, button, textarea {
-      display: block; margin: 1em 0; padding: 0.5em; width: 100%;
-      background: #222; color: #eee; border: 1px solid #444;
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #eee;
+      padding: 2em;
+      max-width: 600px;
+      margin: auto;
     }
-    .output { background: #1a1a1a; padding: 1em; border: 1px solid #333; white-space: pre-wrap; }
+    input, select, button, textarea {
+      display: block;
+      margin: 1em 0;
+      padding: 0.5em;
+      width: 100%;
+      background: #222;
+      color: #eee;
+      border: 1px solid #444;
+    }
+    button {
+      cursor: pointer;
+      background: #333;
+      border: 1px solid #555;
+    }
+    .output {
+      background: #1a1a1a;
+      padding: 1em;
+      border: 1px solid #333;
+      white-space: pre-wrap;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+    }
+    label {
+      font-weight: bold;
+    }
+    #reminder {
+      color: #aaa;
+      font-style: italic;
+      margin-top: 1em;
+    }
   </style>
 </head>
 <body>
@@ -21,31 +55,28 @@
   <input type="text" id="img" placeholder="https://example.com/icon.png">
 
   <label>📄 Target Page</label>
-<select id="page">
-  <option value="index.html">Home</option>
-  <option value="tools.html">Tools</option>
-  <option value="projects.html">Projects</option>
-  <option value="quiklink.html">QuikLink</option>
-</select>
-
+  <select id="page">
+    <option value="index.html">Home</option>
+    <option value="tools.html">Tools</option>
+    <option value="projects.html">Projects</option>
+  </select>
 
   <button onclick="generateCode()">Generate Snippet</button>
 
   <h2>🧬 Output</h2>
   <div class="output" id="output"></div>
+  <button onclick="copyToClipboard()">Copy Snippet</button>
+  <p id="reminder"></p>
 
   <script>
     function generateCode() {
       const url = document.getElementById('url').value.trim();
       const img = document.getElementById('img').value.trim();
-      const page = document.getElementById('page').value.trim();
-     
+      const page = document.getElementById('page').value;
 
       const snippet = `<!-- Add to ${page} -->\n<a href="${url}" target="_blank">\n  <img src="${img}" alt="QuikLink Icon" class="launcher-icon">\n</a>`;
       document.getElementById('output').textContent = snippet;
-      const page = document.getElementById('page').value;
-    }
-  
-  </script>
-</body>
-</html>
+
+      alert(`✅ Snippet generated!\nPaste this code into ${page} where you want the icon to appear.`);
+      document.getElementById('reminder').textContent =
+        `✅ Paste this snippet into
