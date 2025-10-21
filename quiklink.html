@@ -31,6 +31,13 @@
       border: 1px solid #333;
       white-space: pre-wrap;
     }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+    }
+    label {
+      font-weight: bold;
+    }
     #reminder {
       color: #aaa;
       font-style: italic;
@@ -39,13 +46,16 @@
   </style>
 </head>
 <body>
-  <h1>QuikLink — Mobile Debug Test</h1>
+  <h1>QuikLink — Drop. Generate. Deploy.</h1>
 
   <label>🔗 Website URL</label>
   <input type="text" id="url" placeholder="https://example.com">
 
   <label>🖼️ Icon Image URL</label>
   <input type="text" id="img" placeholder="https://example.com/icon.png">
+
+  <label>🔤 Link Label</label>
+  <input type="text" id="label" placeholder="Example">
 
   <label>📄 Target Page</label>
   <select id="page">
@@ -64,21 +74,22 @@
 
   <script>
     function generateCode() {
-      alert("✅ Button is working — generating snippet now.");
-
       const url = document.getElementById('url').value.trim();
       const img = document.getElementById('img').value.trim();
+      const label = document.getElementById('label').value.trim();
       const page = document.getElementById('page').value;
 
-      if (!url || !img || !page) {
+      if (!url || !img || !label || !page) {
         alert("⚠️ Please fill out all fields before generating.");
         return;
       }
 
-      const snippet = `<!-- Add to ${page} -->\n<a href="${url}" target="_blank">\n  <img src="${img}" alt="QuikLink Icon" class="launcher-icon">\n</a>`;
+      const snippet = `<!-- Add to ${page} -->\n<a class="item" href="${url}" target="_blank">\n  <img src="${img}" alt="${label}" style="width:64px; height:64px;">\n  <span>${label}</span>\n</a>`;
       document.getElementById('output').textContent = snippet;
+
+      alert(`✅ Snippet generated!\nPaste this code into ${page} just above the last <a> block in your launcher grid.`);
       document.getElementById('reminder').textContent =
-        `✅ Paste this snippet into ${page} where you want the icon to appear.`;
+        `✅ Paste this snippet into ${page} just above the last <a> block in your launcher grid.`;
     }
 
     function copyToClipboard() {
