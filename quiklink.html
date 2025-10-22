@@ -84,7 +84,7 @@
         return;
       }
 
-      const snippet = `<!-- Add to ${page} -->\n<a class="item" href="${url}" target="_blank">\n  <img src="${img}" alt="${label}" style="width:64px; height:64px;">\n  <span>${label}</span>\n</a>`;
+      const snippet = `<!-- Add to ${page} -->\n<a class="item" href="${url}" target="_blank">\n  <img src="${img}" alt="${label}">\n  <span>${label}</span>\n</a>`;
       document.getElementById('output').textContent = snippet;
 
       alert(`✅ Snippet generated!\nPaste this code into ${page} just above the last <a> block in your launcher grid.`);
