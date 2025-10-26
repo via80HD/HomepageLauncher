@@ -11,7 +11,7 @@
       max-width: 600px;
       margin: auto;
     }
-    input, select, button, textarea {
+    input, button {
       display: block;
       margin: 1em 0;
       padding: 0.5em;
@@ -43,10 +43,16 @@
       font-style: italic;
       margin-top: 1em;
     }
+    .link-preview {
+      background: #222;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+      border: 1px solid #333;
+    }
   </style>
 </head>
 <body>
-  <h1>QuikLink — Drop. Generate. Deploy.</h1>
+  <h1>QuikLink — Drop. Stack. Deploy.</h1>
 
   <label>🔗 Website URL</label>
   <input type="text" id="url" placeholder="https://example.com">
@@ -57,15 +63,10 @@
   <label>🔤 Link Label</label>
   <input type="text" id="label" placeholder="Example">
 
-  <label>📄 Target Page</label>
-  <select id="page">
-    <option value="index.html">Home</option>
-    <option value="tools.html">Tools</option>
-    <option value="projects.html">Projects</option>
-    <option value="quiklink.html">QuikLink</option>
-  </select>
+  <button onclick="addLink()">➕ Add Another Link</button>
+  <div id="preview"></div>
 
-  <button onclick="generateCode()">Generate Snippet</button>
+  <button onclick="generateBatch()">✅ Generate Snippet</button>
 
   <h2>🧬 Output</h2>
   <div class="output" id="output">[Waiting for snippet]</div>
@@ -73,23 +74,54 @@
   <p id="reminder">[Reminder will appear here]</p>
 
   <script>
-    function generateCode() {
+    const links = [];
+
+    function addLink() {
       const url = document.getElementById('url').value.trim();
       const img = document.getElementById('img').value.trim();
       const label = document.getElementById('label').value.trim();
-      const page = document.getElementById('page').value;
 
-      if (!url || !img || !label || !page) {
-        alert("⚠️ Please fill out all fields before generating.");
+      if (!url || !img || !label) {
+        alert("⚠️ Fill out all fields before adding.");
         return;
       }
 
-      const snippet = `<!-- Add to ${page} -->\n<a class="item" href="${url}" target="_blank">\n  <img src="${img}" alt="${label}">\n  <span>${label}</span>\n</a>`;
-      document.getElementById('output').textContent = snippet;
+      if (links.length >= 10) {
+        alert("⚠️ Max 10 links per batch.");
+        return;
+      }
 
-      alert(`✅ Snippet generated!\nPaste this code into ${page} just above the last <a> block in your launcher grid.`);
+      links.push({ url, img, label });
+      updatePreview();
+
+      document.getElementById('url').value = '';
+      document.getElementById('img').value = '';
+      document.getElementById('label').value = '';
+    }
+
+    function updatePreview() {
+      const preview = document.getElementById('preview');
+      preview.innerHTML = '';
+      links.forEach((link, i) => {
+        preview.innerHTML += `<div class="link-preview">#${i + 1}: <strong>${link.label}</strong> → ${link.url}</div>`;
+      });
+    }
+
+    function generateBatch() {
+      if (links.length === 0) {
+        alert("⚠️ Add at least one link.");
+        return;
+      }
+
+      let snippet = '';
+      links.forEach(link => {
+        snippet += `<a class="item" href="${link.url}" target="_blank">\n  <img src="${link.img}" alt="${link.label}">\n  <span>${link.label}</span>\n</a>\n\n`;
+      });
+
+      document.getElementById('output').textContent = snippet.trim();
       document.getElementById('reminder').textContent =
-        `✅ Paste this snippet into ${page} just above the last <a> block in your launcher grid.`;
+        `✅ Paste this batch into your launcher grid just above the last <a> block.`;
+      alert("✅ Batch snippet ready!");
     }
 
     function copyToClipboard() {
