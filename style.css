@@ -2,13 +2,9 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
- #background-color:hsla(207,0%,0%,1);
-background-image:
-conic-gradient(at 96% 100%, hsla(135,100%,78%,1) 0px, transparent 50%),
-conic-gradient(at 49% 98%, hsla(172,100%,78%,1) 0px, transparent 50%),
-conic-gradient(at 13% 100%, hsla(155,100%,78%,1) 0px, transparent 50%)
-  min-height: 100vh;
-  color: #fff;
+  background: #000000;
+  background-image: https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/aaaaa.png;
+  background-repeat: repeat-x, repeat;
 }
 
 /* === Header === */
