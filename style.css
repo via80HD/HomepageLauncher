@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-image: url(https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/aaaaa.png);
+  background-image: url(https://raw.githubusercontent.com/via80HD/HomepageLauncher/main/aaaaa.png);
   background-repeat: repeat-x;
 }
 
@@ -15,6 +15,29 @@ body {
 .header p {
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.headervidgen {
+  text-align: center;
+  padding: 32px 0 8px 0;
+}
+
+.headervidgen h1,
+{
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.headermusgen {
+  text-align: center;
+  padding: 32px 0 8px 0;
+}
+
+.headermusgen h1,
+{
+  color: #265A53;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow-color: #fffff;
 }
 
 /* === Navigation Bar === */
@@ -42,7 +65,7 @@ body {
   transition: color 0.2s;
 }
 .navbar li a:hover {
-  color: #00aaff;
+  color: #265A53;
 }
 
 /* === Icon Grid === */
@@ -64,12 +87,12 @@ a.item {
   align-items: center;
   background: transparent;
   border-radius: 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   padding: 24px 12px 14px 12px;
   transition: box-shadow 0.2s, transform 0.15s;
 }
 a.item:hover {
-  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
   transform: translateY(-2px) scale(1.03);
 }
 a.item img {
