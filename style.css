@@ -19,13 +19,14 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.headervidgen {
+.headervidgen,
+{
   text-align: center;
   padding: 32px 0 8px 0;
 }
 
 .headervidgen h1,
-{
+.header p {
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
@@ -36,10 +37,10 @@ body {
 }
 
 .headermusgen h1,
-{
-  color: #265A53;
+.header p {
+  color: #ffffff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  text-shadow-color: #fffff;
+  text-shadow-color: #ffff;
 }
 
 /* === Navigation Bar === */
