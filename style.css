@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background-image: url(https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/aaaaa.png);
-  background-repeat: repeat-x, repeat;
+  background-repeat: repeat-x;
 }
 
 /* === Header === */
