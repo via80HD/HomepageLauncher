@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background-image: url(https://dalankz.wordpress.com/wp-content/uploads/2025/11/dark_hand_painted_watercolour_background_1702.jpg);
-  background-repeat: repeat;
+  background-repeat: repeat-y;
   background-position: top left;
   background-size: auto;
 }
