@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 <body>
-  <nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="aitools.html">AI Tools</a></li>
-    <li><a href="webtools.html">Web Tools</a></li>
-    <li><a href="quiklink.html">QuikLink</a></li>
-  </ul>
-  </nav>
+  <nav class="navbar" id="nav-placeholder"></nav>
+<script>
+  fetch("navbar.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+
   <div class="header">
     <h1>Launcher Homepage</h1>
     <p>Click An Icon, Pussy</p>
