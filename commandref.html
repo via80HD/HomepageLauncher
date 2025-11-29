@@ -7,25 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Navbar (via external include) -->
   <nav class="navbar" id="nav-placeholder"></nav>
-<script>
-  fetch("navbar.html").then(res => res.text()).then(data => {
-    document.getElementById("nav-placeholder").innerHTML = data;
-  });
-</script>
+  <script>
+    fetch("navbar.html").then(res => res.text()).then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+  </script>
 
+  <!-- Header styled by your global CSS -->
+  <div class="header">
+    <h1>Command Line Cheat Sheet</h1>
+  </div>
 
-    <div class="container">
-        <h1>Command Line Cheat Sheet</h1>
-        
-        <div class="command">
-            <h2>Download mp3 using YT-DLP</h2>
-            <p>This command will convert and download whichever YouTube video you provide a link for at the end of this command.</p>
-            <pre><code>yt-dlp -x --audio-format mp3 <insert url here></code></pre>
-        </div>
+  <!-- Grid wrapper (1 column) -->
+  <div class="grid" style="grid-template-columns: 1fr; max-width: 800px;">
 
-        <!-- Add more commands here -->
-        
+    <!-- Command Card -->
+    <div class="command-card">
+      <h2>Download mp3 using YT-DLP</h2>
+      <p>This command converts and downloads any YouTube video as an MP3 file.</p>
+      <pre>yt-dlp -x --audio-format mp3 &lt;insert url here&gt;</pre>
     </div>
+
+    <!-- Add more command-card blocks here -->
+
+  </div>
+
 </body>
 </html>
