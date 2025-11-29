@@ -27,14 +27,24 @@ body {
 }
 
 /* === Navigation Bar === */
+/* === Modern Themed Navbar === */
 .navbar {
-  background-color: linear-gradient(90deg,rgba(0, 0, 0, 0.97) 0%, rgba(56, 56, 56, 0.95) 30%, rgba(38, 90, 83, 0.9) 61%, rgba(41, 143, 129, 0.9) 87%);
-  padding: 12px 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.97) 0%,
+    rgba(56, 56, 56, 0.95) 30%,
+    rgba(38, 90, 83, 0.9) 61%,
+    rgba(41, 143, 129, 0.9) 87%
+  );
+  padding: 16px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(4px);
 }
+
+/* Navbar list layout */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -42,17 +52,52 @@ body {
   gap: 32px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* responsive wrap */
 }
+
+/* Navbar links */
 .navbar li a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
-  transition: color 0.2s;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s, transform 0.2s;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
+
+/* Hover effects */
 .navbar li a:hover {
-  color: #3D85C6;
+  color: #06768E;
+  transform: scale(1.05);
 }
+
+/* Optional animated underline */
+.navbar li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: #06768E;
+  transition: width 0.3s;
+}
+
+.navbar li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
 
 /* === Grid === */
 .grid {
