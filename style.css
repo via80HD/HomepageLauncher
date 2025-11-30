@@ -26,8 +26,9 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-/* === Modern Navbar with 3D Separators === */
+/* === Navbar === */
 .navbar {
+  position: relative;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.97) 0%,
@@ -37,7 +38,6 @@ body {
   );
   padding: 16px 32px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(4px);
@@ -126,18 +126,107 @@ body {
   .nav-toggle {
     display: block;
     position: absolute;
-    top: 16px;
+    top: 12px;
     left: 16px;
-    margin: 0;
     z-index: 1100;
+    margin: 0;
   }
 
   .navbar {
-    padding: 48px 16px 16px 16px;
+    padding: 12px 16px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
   .navbar ul {
     display: none;
     flex-direction: column;
-    gap
+    gap: 16px;
+    align-items: center;
+  }
+
+  .navbar.mobile-open ul {
+    display: flex;
+  }
+
+  .navbar li:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* === Grid === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* === Clickable Icon Items === */
+a.item {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 24px 12px 14px 12px;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+a.item:hover {
+  box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+  transform: translateY(-2px) scale(1.03);
+}
+a.item img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+a.item span {
+  font-size: 1.03rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* === Responsive === */
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    padding: 12px;
+    gap: 16px;
+  }
+  .header {
+    padding-top: 18px;
+  }
+}
+
+/* === Command Cards === */
+.command-card {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  border-left: 4px solid #265A53;
+}
+.command-card h2 {
+  color: #fff;
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+.command-card p {
+  color: #e0e0e0;
+  margin-bottom: 12px;
+}
+.command-card pre {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
