@@ -1,13 +1,16 @@
-<button class="nav-toggle">☰</button>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="aitools.html">AI Tools</a></li>
-  <li><a href="webtools.html">Web Tools</a></li>
-  <li><a href="quiklink.html">QuikLink</a></li>
-  <li><a href="commandref.html">Command Ref</a></li>
-</ul>
+<div class="navbar">
+  <button class="nav-toggle">☰</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aitools.html">AI Tools</a></li>
+    <li><a href="webtools.html">Web Tools</a></li>
+    <li><a href="quiklink.html">QuikLink</a></li>
+    <li><a href="commandref.html">Command Ref</a></li>
+  </ul>
+</div>
+
 <script>
-document.querySelector('.nav-toggle').onclick = () => {
-  document.querySelector('.navbar').classList.toggle('mobile-open');
-};
+  document.querySelector('.nav-toggle').onclick = () => {
+    document.querySelector('.navbar').classList.toggle('mobile-open');
+  };
 </script>
