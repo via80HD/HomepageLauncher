@@ -12,7 +12,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   overflow-x: hidden;
-  color: #fff;  /* ← GLOBAL TEXT COLOR FIX */
+  color: #fff;
 }
 
 /* === Header === */
@@ -25,6 +25,7 @@ body {
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
+
 /* === Modern Navbar with 3D Separators === */
 .navbar {
   background: linear-gradient(
@@ -50,7 +51,7 @@ body {
   gap: 32px;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap; /* responsive wrap */
+  flex-wrap: wrap;
 }
 
 /* Navbar links */
@@ -114,16 +115,39 @@ body {
               0 5px 4px rgba(0,0,0,0.5);
 }
 
-/* Responsive: stack vertically on smaller screens */
+/* === Hamburger Button === */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* === Responsive Navbar (Mobile) === */
 @media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+
   .navbar ul {
+    display: none;
     flex-direction: column;
     gap: 16px;
     align-items: center;
   }
 
+  .navbar.mobile-open ul {
+    display: flex;
+  }
+
   .navbar li:not(:last-child)::after {
-    display: none; /* hide separators on vertical layout */
+    display: none;
   }
 }
 
@@ -204,4 +228,3 @@ a.item span {
   font-size: 0.95rem;
   line-height: 1.4;
 }
-
