@@ -29,13 +29,7 @@ body {
 /* === Navbar === */
 .navbar {
   position: relative;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.97) 0%,
-    rgba(56, 56, 56, 0.95) 30%,
-    rgba(38, 90, 83, 0.9) 61%,
-    rgba(41, 143, 129, 0.9) 87%
-  );
+  background: linear-gradient(90deg, #ffc0cb, #ff69b4, #db7093);   
   padding: 16px 32px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   top: 0;
