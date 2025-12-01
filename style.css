@@ -1,3 +1,10 @@
+# CSS Code Fix for Mobile-Friendly Design
+
+## Requirement Summary
+The goal is to ensure that the mobile version of the website has a single gradient background and that the hamburger button fits correctly within the layout. This will enhance the user experience on mobile devices.
+
+## Code Generated
+```css
 /* === Base === */
 body {
   margin: 0;
@@ -6,7 +13,10 @@ body {
   width: 100vw;
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #2b2b28;
-  background-image: url("https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/bgbgbg.jpg");
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ), url("https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/bgbgbg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
