@@ -9,8 +9,17 @@
   </ul>
 </div>
 
+<nav class="navbar" id="nav-placeholder"></nav>
 <script>
-  document.querySelector('.nav-toggle').onclick = function() {
-  document.querySelector('.navbar').classList.toggle('mobile-open');
-};
+  fetch("navbar.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+    
+    // Now add the toggle functionality AFTER the navbar loads
+    const toggle = document.querySelector('.nav-toggle');
+    if (toggle) {
+      toggle.onclick = function() {
+        document.querySelector('.navbar').classList.toggle('mobile-open');
+      };
+    }
+  });
 </script>
