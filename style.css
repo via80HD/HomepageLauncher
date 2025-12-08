@@ -5,11 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Source Code Pro", "Fira Mono", "Droid Sans Mono", monospace
-  background: url('https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/graddddd.png') center/cover no-repeat fixed;
-  color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
+  background-image: url('https://raw.githubusercontent.com/via80HD/HomepageLauncher/1bb710aee0cfb7bed31c1cbea49b0d6c95b0f193/graddddd.png');
 }
 
 /* === Navbar === */
