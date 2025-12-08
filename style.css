@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Source Code Pro", "Fira Mono", "Droid Sans Mono", monospace
   background: url("https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/graddddd.png") center/cover no-repeat fixed;
   color: #fff;
   min-height: 100vh;
