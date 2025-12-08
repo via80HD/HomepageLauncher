@@ -1,25 +1,7 @@
 <div class="navbar">
-  <button class="nav-toggle">☰</button>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="aitools.html">AI Tools</a></li>
-    <li><a href="webtools.html">Web Tools</a></li>
-    <li><a href="quiklink.html">QuikLink</a></li>
-    <li><a href="commandref.html">Command Ref</a></li>
-  </ul>
+  <a href="/index.html">Home</a>
+  <a href="/ai-tools.html">AI Tools</a>
+  <a href="/web-tools.html">Web Tools</a>
+  <a href="/quiklink.html">QuikLink</a>
+  <a href="/command-ref.html">Command Ref</a>
 </div>
-
-<nav class="navbar" id="nav-placeholder"></nav>
-<script>
-  fetch("navbar.html").then(res => res.text()).then(data => {
-    document.getElementById("nav-placeholder").innerHTML = data;
-    
-    // Now add the toggle functionality AFTER the navbar loads
-    const toggle = document.querySelector('.nav-toggle');
-    if (toggle) {
-      toggle.onclick = function() {
-        document.querySelector('.navbar').classList.toggle('mobile-open');
-      };
-    }
-  });
-</script>
