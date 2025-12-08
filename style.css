@@ -14,8 +14,7 @@ body {
 
 /* === Navbar === */
 .navbar {
-  display: inline-block;
-  flex-wrap: wrap;
+  display: flex;
   justify-content: center;
   align-items: center;
   background: #1e1e1e;
@@ -24,19 +23,21 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
+
 .navbar a {
   color: #fff;
   text-decoration: none;
-  margin: 8px 12px;
+  margin: 0 16px;
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
+
 .navbar a:hover {
   color: #FF0033;
 }
-
 /* === Header === */
 .header {
   text-align: center;
