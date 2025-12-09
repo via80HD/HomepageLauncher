@@ -99,66 +99,20 @@
   <p id="reminder">[Reminder will appear here]</p>
 
   <script>
-    const links = [];
+  // Load the shared navbar
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
 
-    function addLink() {
-      const url = document.getElementById('url').value.trim();
-      const img = document.getElementById('img').value.trim();
-      const label = document.getElementById('label').value.trim();
-
-      if (!url || !img || !label) {
-        alert("⚠️ Fill out all fields before adding.");
-        return;
+      // Attach toggle functionality AFTER navbar is injected
+      const toggle = document.querySelector(".nav-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          document.querySelector(".navbar").classList.toggle("mobile-open");
+        });
       }
-
-      if (links.length >= 10) {
-        alert("⚠️ Max 10 links per batch.");
-        return;
-      }
-
-      links.push({ url, img, label });
-      updatePreview();
-
-      document.getElementById('url').value = '';
-      document.getElementById('img').value = '';
-      document.getElementById('label').value = '';
-    }
-
-    function updatePreview() {
-      const preview = document.getElementById('preview');
-      preview.innerHTML = '';
-      links.forEach((link, i) => {
-        preview.innerHTML += `<div class="link-preview">#${i + 1}: <strong>${link.label}</strong> → ${link.url}</div>`;
-      });
-    }
-
-    function generateBatch() {
-      if (links.length === 0) {
-        alert("⚠️ Add at least one link.");
-        return;
-      }
-
-      let snippet = '';
-      links.forEach(link => {
-        snippet += `<a class="item" href="${link.url}" target="_blank">\n  <img src="${link.img}" alt="${link.label}">\n  <span>${link.label}</span>\n</a>\n\n`;
-      });
-
-      document.getElementById('output').textContent = snippet.trim();
-      document.getElementById('reminder').textContent =
-        `Paste this just above the last <a> block in your launcher grid.`;
-      alert("Batch snippet ready!");
-    }
-
-    function copyToClipboard() {
-      const output = document.getElementById('output').textContent;
-      if (!output || output.includes("[Waiting")) {
-        alert("⚠️ Nothing to copy. Generate a snippet first.");
-        return;
-      }
-      navigator.clipboard.writeText(output).then(() => {
-        alert("Snippet copied to clipboard!");
-      });
-    }
-  </script>
+    });
+</script>
 </body>
 </html>
