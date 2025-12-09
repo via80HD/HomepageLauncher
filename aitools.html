@@ -8,13 +8,9 @@
 </head>
 <body>
   <nav class="navbar" id="nav-placeholder"></nav>
-<script>
-  fetch("navbar.html").then(res => res.text()).then(data => {
-    document.getElementById("nav-placeholder").innerHTML = data;
-  });
-</script>
 
-<script>  document.addEventListener("click", function(e) {    if (e.target.classList.contains("nav-toggle")) {      document.querySelector(".navbar").classList.toggle("mobile-open");    }  });</script>
+<script>  // Load the shared navbar  fetch("navbar.html")    .then(res => res.text())    .then(data => {      document.getElementById("nav-placeholder").innerHTML = data;      // Attach toggle functionality AFTER navbar is injected      const toggle = document.querySelector(".nav-toggle");      if (toggle) {        toggle.addEventListener("click", function () {          document.querySelector(".navbar").classList.toggle("mobile-open");        });      }    });</script>
+
   <div class="header">
     <h1>AI Tools</h1>
     <p>An Array Of Useful AI Tools</p>
