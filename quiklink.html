@@ -8,23 +8,22 @@
 <body>
   <!-- Shared Navbar -->
   <nav class="navbar" id="nav-placeholder"></nav>
-  <script>
-    // Load the shared navbar
-    fetch("navbar.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
+ <script>
+  // Load the shared navbar
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
 
-        // Attach toggle functionality AFTER navbar is injected
-        const toggle = document.querySelector(".nav-toggle");
-        if (toggle) {
-          toggle.addEventListener("click", function () {
-            document.querySelector(".navbar").classList.toggle("mobile-open");
-          });
-        }
-      });
-  </script>
-
+      // Attach toggle functionality AFTER navbar is injected
+      const toggle = document.querySelector(".nav-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          document.querySelector(".navbar").classList.toggle("mobile-open");
+        });
+      }
+    });
+</script>
   <!-- Page Content -->
   <div class="quiklink">
     <h1>QuikLink — Drop. Stack. Deploy.</h1>
