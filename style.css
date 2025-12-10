@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: space-between; /* space between toggle and links */
   align-items: center;
-  background: #1e1e1e;
+  background: #linear-gradient(to left top, #222222, #2e3038, #34404f, #345365, #2c6679, #2c6679, #2c6679, #2c6679, #345365, #34404f, #2e3038, #222222);;
   padding: 12px 16px;
   position: sticky;
   top: 0;
