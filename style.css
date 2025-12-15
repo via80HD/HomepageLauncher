@@ -58,7 +58,7 @@ body {
   fill: #ccc;
 }
 
-.nav-left {
+.nav-right {
   display: flex;
   align-items: center;
   gap: 12px;
