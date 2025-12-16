@@ -44,7 +44,7 @@
     <button onclick="generateBatch()">Generate Snippet</button>
 
     <h2>Output</h2>
-    <div class="output" id="output">[Waiting for snippet]</div>
+    <div class="output" id="output">WAITING FOR SNIPPET..</div>
     <button onclick="copyToClipboard()">Copy Snippet</button>
     <p id="reminder">[Reminder will appear here]</p>
   </div>
@@ -60,7 +60,7 @@
       const div = document.createElement("div");
       div.className = "link-preview";
       div.innerHTML = `<a href="${url}" target="_blank">
-        <img src="${img}" alt="${label}" style="width:40px;height:40px;object-fit:contain;">
+        <img src="${img}" alt="${label}";>
         <span>${label}</span>
       </a>`;
       preview.appendChild(div);
@@ -78,7 +78,7 @@
     function copyToClipboard() {
       const output = document.getElementById("output").textContent;
       navigator.clipboard.writeText(output).then(() => {
-        document.getElementById("reminder").textContent = "✅ Snippet copied to clipboard!";
+        document.getElementById("reminder").textContent = "Snippet copied to clipboard!";
       });
     }
   </script>
