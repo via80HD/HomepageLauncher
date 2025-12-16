@@ -7,14 +7,13 @@
 
 body {
   background-image: url('https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/bgbgbg.jpg');
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
+  font-family: sans-serif;
   color: #fff;
 }
 
 /* === Navbar === */
 .navbar {
   display: flex;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
   justify-content: space-between; /* space between toggle and links */
   align-items: center;
   background: linear-gradient(to right bottom, #111111, #151515, #181818, #1b1b1b, #1e1e1e, #252528, #2c2d33, #31353f, #354656, #32596d, #286c7f, #18818d);
@@ -56,7 +55,7 @@ body {
 }
 
 .nav-home:hover svg path {
-  fill: #FF0033;
+  fill: #ccc;
 }
 
 .nav-right {
@@ -76,18 +75,15 @@ body {
 
 /* === Header === */
 .header {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
   text-align: center;
   padding: 32px 16px 16px;
   color: white;
 }
 .header h1 {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
   font-size: 2rem;
   margin-bottom: 8px;
 }
 .header p {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
   font-size: 1.1rem;
   opacity: 0.8;
 }
@@ -104,7 +100,6 @@ body {
 
 /* === Launcher Items === */
 a.item {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
   text-decoration: none;
   color: inherit;
   background: rgba(0,0,0,0.3);
