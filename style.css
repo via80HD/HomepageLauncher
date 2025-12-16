@@ -7,7 +7,7 @@
 
 body {
   background-image: url('https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/bgbgbg.jpg');
-  font-family: sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Cascadia Code", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace ;
   color: #fff;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-home:hover svg path {
-  fill: #ccc;
+  fill: #FF0033;
 }
 
 .nav-right {
