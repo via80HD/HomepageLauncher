@@ -52,19 +52,24 @@
   <!-- QuikLink Script -->
   <script>
     function addLink() {
-      const url = document.getElementById("url").value;
-      const img = document.getElementById("img").value;
-      const label = document.getElementById("label").value;
+  const url = document.getElementById("url").value;
+  const img = document.getElementById("img").value;
+  const label = document.getElementById("label").value;
 
-      const preview = document.getElementById("preview");
-      const div = document.createElement("div");
-      div.className = "link-preview";
-      div.innerHTML = `<a href="${url}" target="_blank">
-        <img src="${img}" alt="${label}";>
-        <span>${label}</span>
-      </a>`;
-      preview.appendChild(div);
-    }
+  const preview = document.getElementById("preview");
+  const div = document.createElement("div");
+  div.className = "link-preview";
+
+  div.innerHTML = `
+    <a class="item" href="${url}" target="_blank">
+      <img src="${img}" alt="${label}">
+      <span>${label}</span>
+    </a>
+  `;
+
+  preview.appendChild(div);
+}
+
 
     function generateBatch() {
       const previews = document.querySelectorAll(".link-preview");
