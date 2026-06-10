@@ -7,70 +7,105 @@
 
 body {
   background-image: url('https://raw.githubusercontent.com/via80HD/HomepageLauncher/refs/heads/main/bgbgbg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
   font-family: sans-serif;
   color: #fff;
 }
 
-/* === Navbar === */
+/* === Matte Glass Navbar === */
 .navbar {
   display: flex;
-  justify-content: space-between; /* space between toggle and links */
+  justify-content: space-between; 
   align-items: center;
-  background: linear-gradient(to right bottom, #111111, #151515, #181818, #1b1b1b, #1e1e1e, #252528, #2c2d33, #31353f, #354656, #32596d, #286c7f, #18818d);
-  padding: 12px 16px;
+  padding: 14px 32px;
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  /* Matte Glass Effect with Black-Burgundy-Red Gradient */
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 15, 15, 0.75) 0%, 
+    rgba(35, 10, 15, 0.8) 50%, 
+    rgba(65, 15, 20, 0.75) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Subtle dark border to define the glass edge */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Home Icon Styling (Replaces old .nav-home) */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  width: 22px; 
+  height: 22px;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-brand svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(255, 255, 255, 0.85);
+  transition: fill 0.2s ease, filter 0.2s ease;
+}
+
+.nav-brand:hover {
+  transform: scale(1.1);
+}
+
+.nav-brand:hover svg {
+  fill: #FF0033; /* Matches your signature red highlight */
+  filter: drop-shadow(0 0 6px rgba(255, 0, 51, 0.6)); /* Digital neon bloom */
+}
+
+/* Right Menu Layout */
+.nav-right {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 8px; /* Tightened gap for navigation pill links */
 }
 
 .nav-links a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  border-radius: 20px; /* Pill structure */
+  transition: all 0.2s ease;
 }
 
+/* Glass Pill Highlight on Hover */
 .nav-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a:active {
   color: #FF0033;
 }
-.nav-home {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  padding: 8px;
-  text-decoration: none;
-  margin-right: 10px;
-}
 
-.nav-home svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.nav-home:hover svg path {
-  fill: #ccc;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 /* Hamburger button (hidden on desktop) */
 .nav-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
+  padding: 4px;
 }
 
 /* === Header === */
@@ -79,10 +114,12 @@ body {
   padding: 32px 16px 16px;
   color: white;
 }
+
 .header h1 {
   font-size: 2rem;
   margin-bottom: 8px;
 }
+
 .header p {
   font-size: 1.1rem;
   opacity: 0.8;
@@ -108,16 +145,19 @@ a.item {
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 a.item:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(255,255,255,0.2);
 }
+
 a.item img {
   width: 100px;
   height: 100px;
   object-fit: contain;
   margin-bottom: 12px;
 }
+
 a.item span {
   display: block;
   font-size: 1rem;
@@ -178,7 +218,7 @@ a.item span {
   border: 1px solid #333;
 }
 
-/* === Responsive Header Padding === */
+/* === Responsive Layout Padding === */
 @media (max-width: 500px) {
   .header {
     padding-top: 16px;
@@ -186,28 +226,52 @@ a.item span {
 }
 
 /* === Mobile Navbar Styles === */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
   .nav-toggle {
-    display: block; /* show hamburger */
+    display: block; /* Shows hamburger */
   }
 
   .nav-links {
-    display: none; /* hide links by default */
+    display: none; /* Hidden by default until dynamic toggling */
     flex-direction: column;
-    background: #1e1e1e;
+    gap: 0;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
     width: 100%;
-    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 12px 12px;
+    
+    /* Dropdown inherits custom frosted dark matte look */
+    background: linear-gradient(
+      180deg, 
+      rgba(25, 12, 15, 0.95) 0%, 
+      rgba(15, 15, 15, 0.95) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .navbar.mobile-open .nav-links {
-    display: flex; /* show links when toggled */
+    display: flex; 
   }
 
   .nav-links a {
-    padding: 12px;
-    text-align: center;
+    padding: 16px 24px;
+    text-align: left;
+    border-radius: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   }
-}  
+  
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #FF0033;
+    padding-left: 32px; /* Slight horizontal push animation on focus/tap */
+  }
+}
