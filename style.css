@@ -68,6 +68,7 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
+  margin-left: auto; /* Pins the entire link group right against the right padding edge */
 }
 
 .nav-links {
@@ -263,7 +264,7 @@ a.item span {
 
   .nav-links a {
     padding: 16px 24px;
-    text-align: left;
+    text-align: right; /* Links align to the right inside the mobile menu drop */
     border-radius: 0;
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.02);
@@ -272,6 +273,6 @@ a.item span {
   .nav-links a:hover {
     background: rgba(255, 255, 255, 0.05);
     color: #FF0033;
-    padding-left: 32px; /* Slight horizontal push animation on focus/tap */
+    padding-right: 32px; /* Pulls from the right side for the mobile hover effect */
   }
 }
