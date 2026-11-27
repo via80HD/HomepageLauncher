@@ -1,4 +1,4 @@
-const TRACKER_URL = 'https://script.google.com/macros/s/AKfycbwoG6AYuhMsBqd6O6eyYL7NcEYsY61FV6ECgNqIcvFKvlO7QV7_YmbeK4AjVZMwLmG7TQ/exec';
+const TRACKER_URL = 'https://script.google.com/macros/s/AKfycbxuTLqglFL_RWl3k5PYYR1KHMc_iiDxhViOAhr66F3r98mjt-f8053Bzz6q7c8kScXDyg/exec';
 
   function getLinkLabel(link) {
     const text = (link.innerText || '').trim();
